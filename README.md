@@ -9,6 +9,7 @@ Welcome to the repository for **Fast Bibliography Pre-selection Based on Dual Ve
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Training](#training)
 - [Methodology](#methodology)
 - [Experiments](#experiments)
 - [Results](#results)
@@ -63,6 +64,26 @@ You can customize the parameters for pre-selection, such as the maximum subset s
 ```python
 subset = preselector.preselect_bibliography(query="Your research title", max_subset_size=50000, similarity_threshold=0.8)
 ```
+
+## Training
+
+To train the dual vector model on your own dataset, use the `train_fastbib.py` script. This script is designed to handle the training process, including loading data, defining the loss function, and updating the model's weights.
+
+### Example Training Script Usage
+
+1. Prepare your dataset as a list of dictionaries, where each dictionary contains a 'query', 'entry', and 'label' (1 for a positive citation link, 0 for a negative).
+
+2. Run the training script:
+
+   ```bash
+   python train_fastbib.py
+   ```
+
+   The script will train the model and print the average loss per epoch.
+
+### Customizing Training Parameters
+
+You can customize various parameters in the training script, such as batch size, learning rate, and the number of epochs.
 
 ## Methodology
 
